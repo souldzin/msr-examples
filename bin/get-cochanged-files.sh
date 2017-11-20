@@ -15,6 +15,6 @@ dir_src=$(readlink -f ${dir_bin}/../src)
 rev_args=${1}
 diff_args=${2}
 parse_args=${3}
-command="git rev-list --all ${rev_args} | git diff-tree -r --name-only --stdin ${diff_args} | ${dir_src}/parse_cochanged_files.py ${parse_args}"
+command="git rev-list --all ${rev_args} | git diff-tree -r --name-only --stdin ${diff_args} | ${dir_src}/get_cochanged_files.py ${parse_args}"
 echo "${command}"
 eval "${command}"
